@@ -1,6 +1,6 @@
 Depot::Application.routes.draw do
   
-root :to => 'store#index' 
+root :to => 'store#index', :as => 'store' 
 resources :orders
 
   resources :line_items
