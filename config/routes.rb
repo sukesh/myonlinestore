@@ -1,19 +1,20 @@
 Depot::Application.routes.draw do
   
-root :to => 'store#index', :as => 'store' 
+
 resources :orders
 
   resources :line_items
 
   resources :carts
 
-  get "store/index"
+  #get "store/index"
 
   #resources :products
 resources :products do
 get :who_bought, :on => :member
 end
 
+root :to => 'store#index', :as => 'store' 
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -69,5 +70,5 @@ end
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
-  # match ':controller(/:action(/:id(.:format)))'
+   match ':controller(/:action(/:id(.:format)))'
 end

@@ -55,7 +55,7 @@ respond_to do |format|
 if @order.save
 Cart.destroy(session[:cart_id])
 session[:cart_id] = nil
-format.html { redirect_to(store_url, :notice =>
+format.html { redirect_to({:controller=>"store",:action=>"index"}, :notice =>
 'Thank you for your order.') }
 format.xml { render :xml => @order, :status => :created,
 :location => @order }
